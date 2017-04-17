@@ -250,11 +250,7 @@ bool autoload_t::locate_file_and_maybe_load_it(const wcstring &cmd, bool really_
         // Generate a placeholder.
         autoload_function_t *func = this->get(cmd);
         if (!func) {
-            if (really_load) {
-                this->insert(cmd, autoload_function_t(true));
-            } else {
-                this->insert(cmd, autoload_function_t(true));
-            }
+            this->insert(cmd, autoload_function_t(true));
             func = this->get(cmd);
             assert(func);
         }
